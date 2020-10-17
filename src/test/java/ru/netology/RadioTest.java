@@ -10,8 +10,8 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinVolume(0);
-        radio.setMaxVolume(10);
-        radio.setCurrentVolume(5);
+        radio.setMaxVolume(100);
+        radio.setCurrentVolume(50);
 
         int oldVolume = radio.getCurrentVolume();
 
@@ -27,8 +27,8 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinVolume(0);
-        radio.setMaxVolume(10);
-        radio.setCurrentVolume(10);
+        radio.setMaxVolume(100);
+        radio.setCurrentVolume(100);
 
         int oldVolume = radio.getCurrentVolume();
 
@@ -44,8 +44,8 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinVolume(0);
-        radio.setMaxVolume(10);
-        radio.setCurrentVolume(5);
+        radio.setMaxVolume(100);
+        radio.setCurrentVolume(50);
 
         int oldVolume = radio.getCurrentVolume();
 
@@ -61,7 +61,7 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinVolume(0);
-        radio.setMaxVolume(10);
+        radio.setMaxVolume(100);
         radio.setCurrentVolume(0);
 
         int oldVolume = radio.getCurrentVolume();
@@ -78,8 +78,8 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinVolume(0);
-        radio.setMaxVolume(10);
-        radio.setCurrentVolume(5);
+        radio.setMaxVolume(100);
+        radio.setCurrentVolume(50);
 
         int oldVolume = radio.getCurrentVolume();
 
@@ -95,12 +95,12 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinVolume(0);
-        radio.setMaxVolume(10);
-        radio.setCurrentVolume(5);
+        radio.setMaxVolume(100);
+        radio.setCurrentVolume(50);
 
         int oldVolume = radio.getCurrentVolume();
 
-        radio.setCurrentVolume(11);
+        radio.setCurrentVolume(101);
 
         int newVolume = radio.getCurrentVolume();
 
@@ -112,7 +112,7 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(9);
+        radio.setMaxStation(10);
         radio.setCurrentStation(4);
 
         int oldStation = radio.getCurrentStation();
@@ -129,8 +129,8 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(9);
-        radio.setCurrentStation(9);
+        radio.setMaxStation(10);
+        radio.setCurrentStation(10);
 
         int minStation = radio.getMinStation();
 
@@ -146,7 +146,7 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(9);
+        radio.setMaxStation(10);
         radio.setCurrentStation(6);
 
         int oldStation = radio.getCurrentStation();
@@ -163,7 +163,7 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(9);
+        radio.setMaxStation(10);
         radio.setCurrentStation(0);
 
         int maxStation = radio.getMaxStation();
@@ -180,7 +180,7 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(9);
+        radio.setMaxStation(10);
 
         int stationToSelect = 5;
 
@@ -196,7 +196,7 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(9);
+        radio.setMaxStation(10);
         radio.setCurrentStation(5);
 
         int oldStation = radio.getCurrentStation();
@@ -213,12 +213,12 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(9);
+        radio.setMaxStation(10);
         radio.setCurrentStation(5);
 
         int oldStation = radio.getCurrentStation();
 
-        radio.setCurrentStation(10);
+        radio.setCurrentStation(11);
 
         int newStation = radio.getCurrentStation();
 
