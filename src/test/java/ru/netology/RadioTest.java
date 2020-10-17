@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
-    void increaseCurrentVolumeSuccess() {
+    public void increaseCurrentVolumeSuccess() {
         Radio radio = new Radio();
 
         radio.setMinVolume(0);
@@ -112,7 +112,6 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(10);
         radio.setCurrentStation(4);
 
         int oldStation = radio.getCurrentStation();
@@ -129,7 +128,6 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(10);
         radio.setCurrentStation(10);
 
         int minStation = radio.getMinStation();
@@ -146,7 +144,6 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(10);
         radio.setCurrentStation(6);
 
         int oldStation = radio.getCurrentStation();
@@ -163,10 +160,9 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(10);
         radio.setCurrentStation(0);
 
-        int maxStation = radio.getMaxStation();
+        int maxStation = radio.getQuantityStation();
 
         radio.prevStation();
 
@@ -180,7 +176,6 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(10);
 
         int stationToSelect = 5;
 
@@ -196,7 +191,6 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(10);
         radio.setCurrentStation(5);
 
         int oldStation = radio.getCurrentStation();
@@ -213,7 +207,6 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setMinStation(0);
-        radio.setMaxStation(10);
         radio.setCurrentStation(5);
 
         int oldStation = radio.getCurrentStation();
@@ -223,5 +216,25 @@ public class RadioTest {
         int newStation = radio.getCurrentStation();
 
         assertEquals(oldStation, newStation);
+    }
+
+    @Test
+    void createWithoutQuantityStation() {
+        Radio radio = new Radio();
+
+        int actualQuantityStation = radio.getQuantityStation();
+        int expectedQuantityStation = 10;
+
+        assertEquals(expectedQuantityStation, actualQuantityStation);
+    }
+
+    @Test
+    void createWithQuantityStation() {
+        Radio radio = new Radio(4);
+
+        int actualQuantityStation = radio.getQuantityStation();
+        int expectedQuantityStation = 4;
+
+        assertEquals(expectedQuantityStation, actualQuantityStation);
     }
 }
