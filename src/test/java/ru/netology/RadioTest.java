@@ -96,7 +96,7 @@ public class RadioTest {
 
         radio.setMinVolume(0);
         radio.setMaxVolume(100);
-        radio.setCurrentVolume(50);
+        radio.setCurrentVolume(100);
 
         int oldVolume = radio.getCurrentVolume();
 
