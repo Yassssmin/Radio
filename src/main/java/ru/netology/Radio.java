@@ -9,9 +9,17 @@ public class Radio {
     private int currentVolume;
     private int quantityStation;
     private int currentStation;
-    private int maxStation;
     private int minStation;
     private boolean on;
+
+    public Radio() {
+        this.quantityStation = 10;
+    }
+
+    public Radio(int quantityStation) {
+        this.quantityStation = quantityStation;
+    }
+
 
     // Сеттеры и геттеры
     public String getName() {
@@ -51,17 +59,6 @@ public class Radio {
         return currentVolume;
     }
 
-    public void setCurrentVolume(int currentVolume) {
-        if (currentVolume > maxVolume) {
-            return;
-        }
-        if (currentVolume < minVolume) {
-            return;
-        }
-
-        this.currentVolume = currentVolume;
-    }
-
     // сеттеры и геттеры для переменных станций
     public int getQuantityStation() {
         return quantityStation;
@@ -69,14 +66,6 @@ public class Radio {
 
     public void setQuantityStation(int quantityStation) {
         this.quantityStation = quantityStation;
-    }
-
-    public int getMaxStation() {
-        return maxStation;
-    }
-
-    public void setMaxStation(int maxStation) {
-        this.maxStation = maxStation;
     }
 
     public int getMinStation() {
@@ -89,18 +78,6 @@ public class Radio {
 
     public int getCurrentStation() {
         return currentStation;
-    }
-
-    public void setCurrentStation(int currentStation) {
-        if (currentStation > maxStation) {
-            return;
-        }
-
-        if (currentStation < minStation) {
-            return;
-        }
-
-        this.currentStation = currentStation;
     }
 
     // методы для звука
@@ -128,13 +105,24 @@ public class Radio {
         this.currentVolume = newVolume;
     }
 
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume > maxVolume) {
+            return;
+        }
+        if (currentVolume < minVolume) {
+            return;
+        }
+
+        this.currentVolume = currentVolume;
+    }
+
     // методы для станций
     public void nextStation() {
         int newStation;
 
         newStation = this.currentStation + 1;
 
-        if (newStation > this.maxStation) {
+        if (newStation > this.quantityStation) {
             this.currentStation = this.minStation;
 
             return;
@@ -149,12 +137,24 @@ public class Radio {
         newStation = this.currentStation - 1;
 
         if (newStation < this.minStation) {
-            this.currentStation = this.maxStation;
+            this.currentStation = this.quantityStation;
 
             return;
         }
 
         this.currentStation = newStation;
+    }
+
+    public void setCurrentStation(int currentStation) {
+        if (currentStation > quantityStation) {
+            return;
+        }
+
+        if (currentStation < minStation) {
+            return;
+        }
+
+        this.currentStation = currentStation;
     }
 }
 
